@@ -52,3 +52,16 @@ function parse_git_dirty {
         fi
         if [ "${deleted}" == "0" ]; then
                 bits="x${bits}"
+        fi
+        if [ "${dirty}" == "0" ]; then
+                bits="!${bits}"
+        fi
+        if [ ! "${bits}" == "" ]; then
+                echo " ${bits}"
+        else
+                echo ""
+        fi
+}
+
+export PS1="\[\e[33m\][\[\e[m\]\[\e[33m\]\t\[\e[m\]\[\e[33m\]]\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]:\[\e[35m\]\w\[\e[m\]\n\[\e[33m\]λ\[\e[m\] "
+
