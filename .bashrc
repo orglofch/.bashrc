@@ -1,19 +1,50 @@
-# Aliases.
+# Do nothing for non-interactive shells.
+[ -z "$PS1" ] && return
+
+#  Misc Aliases.
 alias '..'='cd ..'
 alias 'cd2'='cd ../..'
 alias 'cd3'='cd ../../..'
 alias 'cd4'='cd ../../../..'
+alias 'll'='ls -alFhS'
+alias 'la'='ls -A'
+alias 'l'='ls -CF'
+alias 'grep'='grep -i'
+alias 'alert'='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias 'hs'='history | grep '
+alias 'cp'='cp -iv'
+alias 'rm'='rm -i'
+alias 'mv'='mv -iv'
+
+# Git Aliases.
+alias 'gs'='git status'
+alias 'gb'='git branch --all'
+alias 'gbs'='git branch --all | grep '
+alias 'gaa'='git add -A'
+alias 'gcm'='git commit -m '
 
 # Rust Cargo.
 export PATH="$PATH:$HOME/.cargo/bin"
 
-# Global stuff
+# Global stuff.
 export PATH=$HOME/bin:$PATH
 export EDITOR=emacs
 
-# Homebrew stuff
+# History stuff.
+export HISTCONTROL=ignoreboth:erasedups
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+shopt -s histappend
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+
+shopt -s checkwinsize
+
+# Homebrew stuff.
 export PATH=$HOME/homebrew/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/homebrew/lib:$LD_LIBRARY_PATH
+
+# Make less more friendly for non-text input files.
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # PS1 SETUP
 # get current branch in git repo
