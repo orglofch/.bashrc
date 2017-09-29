@@ -15,6 +15,9 @@ alias 'hs'='history | grep '
 alias 'cp'='cp -iv'
 alias 'rm'='rm -i'
 alias 'mv'='mv -iv'
+alias 'lc'='wc -l'
+alias 'df'='df -h'
+alias 'du'='du -h'
 
 # Git Aliases.
 alias 'gs'='git status'
