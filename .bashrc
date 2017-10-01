@@ -1,6 +1,16 @@
 # Do nothing for non-interactive shells.
 [ -z "$PS1" ] && return
 
+echo '    ___       ___       ___       ___   '
+echo '   /\  \     /\  \     /\__\     /\  \  '
+echo '   \:\  \   _\:\  \   /:/  /     \:\  \ '
+echo '   /::\__\ /\/::\__\ /:/__/      /::\__\'
+echo '  /:/\/__/ \::/\/__/ \:\  \     /:/\/__/'
+echo '  \/__/     \:\__\    \:\__\    \/__/   '
+echo '             \/__/     \/__/            '
+echo '                                        '
+echo '                                        '
+
 #  Misc Aliases.
 alias '..'='cd ..'
 alias 'cd2'='cd ../..'
