@@ -1,15 +1,15 @@
 # Do nothing for non-interactive shells.
 [ -z "$PS1" ] && return
 
-echo '    ___       ___       ___       ___   '
-echo '   /\  \     /\  \     /\__\     /\  \  '
-echo '   \:\  \   _\:\  \   /:/  /     \:\  \ '
-echo '   /::\__\ /\/::\__\ /:/__/      /::\__\'
-echo '  /:/\/__/ \::/\/__/ \:\  \     /:/\/__/'
-echo '  \/__/     \:\__\    \:\__\    \/__/   '
-echo '             \/__/     \/__/            '
-echo '                                        '
-echo '                                        '
+echo '    ___       ___       ___      ___   '
+echo '   /\  \     /\  \     /\__\    /\  \  '
+echo '   \:\  \   _\:\  \   /:/  /    \:\  \ '
+echo '   /::\__\ /\/::\__\ /:/__/     /::\__\'
+echo '  /:/\/__/ \::/\/__/ \:\  \    /:/\/__/'
+echo '  \/__/     \:\__\    \:\__\   \/__/   '
+echo '             \/__/     \/__/           '
+echo '                                       '
+echo '                                       '
 
 #  Misc Aliases.
 alias '..'='cd ..'
@@ -18,7 +18,6 @@ alias 'cd3'='cd ../../..'
 alias 'cd4'='cd ../../../..'
 alias 'll'='ls -alFhS'
 alias 'la'='ls -A'
-alias 'l'='ls -CF'
 alias 'grep'='grep -i'
 alias 'alert'='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias 'hs'='history | grep '
@@ -28,6 +27,8 @@ alias 'mv'='mv -iv'
 alias 'lc'='wc -l'
 alias 'df'='df -h'
 alias 'du'='du -h'
+alias 'cls'='clear'
+alias 'fhere'='find . -name '
 
 # Git Aliases.
 alias 'gs'='git status'
